@@ -1,0 +1,41 @@
+Politique de Gestion des Incidents de Sécurité de l’Information
+
+Version : 1.0
+Date : 04/10/2025
+Propriétaire : RSSI / Responsable de la sécurité de l’information
+Validée par : Direction Générale
+
+1. Objet
+Cette politique définit le cadre et les principes de gestion des incidents de sécurité de l’information afin d’assurer une détection rapide, une réponse efficace et une communication appropriée, minimisant ainsi l’impact sur l’organisation et ses parties prenantes.
+
+2. Portée
+Cette politique s’applique à tous les systèmes d’information, applications, services cloud (IaaS, PaaS, SaaS) et infrastructures utilisées par l’organisation.
+Elle couvre tous les employés, prestataires et partenaires impliqués dans la détection, le signalement et la gestion des incidents de sécurité.
+
+3. Définitions
+Incident de sécurité de l’information : tout événement qui compromet la confidentialité, l’intégrité ou la disponibilité des informations ou systèmes.
+Événement : toute occurrence observable dans un système pouvant indiquer un incident.
+Standard de réponse aux incidents : document stratégique définissant le processus de réponse et renvoyant aux procédures spécifiques (Runbooks).
+Runbook / Procédure : instructions techniques détaillées et automatisées pour gérer un type spécifique d’incident.
+
+4. Principes
+Tous les incidents doivent être signalés immédiatement selon le processus défini dans le Standard de réponse aux incidents.
+La gestion des incidents doit être cohérente, ordonnée et documentée.
+Seul le personnel qualifié peut exécuter les procédures techniques (Runbooks).
+Les incidents doivent être classifiés, analysés et documentés pour faciliter le retour d’expérience et l’amélioration continue.
+La confidentialité et la sécurité des preuves doivent être assurées pour toute investigation.
+
+5. Responsabilités
+RSSI / Responsable sécurité : maintien de la politique, supervision des standards et procédures, coordination avec la direction et les autorités si nécessaire.
+Équipes SOC / IT : détection, analyse, réponse et documentation des incidents.
+Tous les employés : signaler immédiatement tout événement suspect au point de contact désigné.
+
+6. Références
+Standard de réponse aux incidents
+Runbooks techniques pour IaaS, PaaS, Code / Applications
+ISO/IEC 27002:2022, Contrôle 5.24
+AWS Security Best Practices
+
+7. Amélioration continue
+Les incidents et exercices de simulation seront revus régulièrement pour identifier les leçons apprises.
+Les standards et runbooks seront mis à jour en conséquence pour réduire les risques futurs.

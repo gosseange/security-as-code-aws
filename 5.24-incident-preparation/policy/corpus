@@ -1,23 +1,23 @@
                         ┌─────────────────────────────┐
-                        │      Policy (Politique)      │
-                        │  Cadre et responsabilités    │
+                        │      Policy (Politique)     │
+                        │  Cadre et responsabilités   │
                         └─────────────┬───────────────┘
                                       │
                                       ▼
                         ┌─────────────────────────────┐
-                        │ Standard de réponse aux      │
+                        │ Standard de réponse aux     │
                         │ incidents (ancien Playbook) │
                         │  – référence les Runbooks   │
                         └─────────────┬───────────────┘
-          ┌──────────────────────────────┼──────────────────────────────┐
-          ▼                              ▼                              ▼
+          ┌───────────────────────────┼──────────────────────────────┐
+          ▼                           ▼                              ▼
  ┌────────────────┐             ┌────────────────┐             ┌────────────────┐
  │ Runbook Code   │             │ Runbook PaaS   │             │ Runbook IaaS   │
- │ (Apps, secrets,│             │ (Services      │             │ (VMs, EC2, SG,│
+ │ (Apps, secrets,│             │ (Services      │             │ (VMs, EC2, SG, │
  │ CI/CD, logs)   │             │ managés)       │             │ Isolation)     │
  └────────────────┘             └────────────────┘             └────────────────┘
-          │                              │                              │
-          ▼                              ▼                              ▼
+          │                           │                              │
+          ▼                           ▼                              ▼
   ┌───────────────┐              ┌───────────────┐              ┌───────────────┐
   │ Actions       │              │ Actions       │              │ Actions       │
   │ techniques    │              │ techniques    │              │ techniques    │

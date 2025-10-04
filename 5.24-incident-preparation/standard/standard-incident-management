@@ -1,0 +1,69 @@
+Standard de Réponse aux Incidents de Sécurité de l’Information
+
+Version : 1.0
+Date : 04/10/2025
+Propriétaire : RSSI / Responsable Sécurité de l’Information
+Validé par : Direction Générale
+
+1️⃣  Objectif
+Fournir un cadre structuré pour la gestion des incidents de sécurité de l’information, assurant une réponse rapide, cohérente et documentée, minimisant l’impact sur l’organisation et ses parties prenantes.
+
+2️⃣  Portée
+ - Tous les systèmes d’information, applications et services cloud utilisés par l’organisation.
+ - Tous les employés, prestataires et partenaires impliqués dans la détection, la réponse et la gestion des incidents.
+
+3️⃣  Définitions
+ - Incident de sécurité : tout événement compromettant la confidentialité, l’intégrité ou la disponibilité des informations.
+ - Runbook / Procédure : instructions techniques détaillées et automatisables pour gérer un type spécifique d’incident.
+ - Type d’asset : Code/Applications, PaaS, IaaS.
+
+4️⃣  Principes de Réponse aux Incidents
+1. Tous les incidents doivent être signalés immédiatement au point de contact désigné.
+2. Les incidents doivent être classifiés, priorisés et traités selon leur gravité et impact métier.
+3. La gestion des incidents doit être documentée et suivie.
+4. Seul le personnel qualifié peut exécuter les Runbooks.
+5. La confidentialité et la sécurité des preuves doivent être préservées.
+6. La coordination avec les parties prenantes internes et externes est obligatoire selon le type d’incident.
+
+5️⃣  Processus Général
+1. Détection et Notification
+ - Surveillance continue via outils AWS (CloudTrail, GuardDuty, Config, etc.).
+ - Signalement immédiat au SOC ou au point de contact.
+2. Classification et Priorisation
+ - Déterminer le type d’incident et sa gravité.
+ - Identifier les parties prenantes à notifier.
+3. Réponse et Confinement
+ - Consulter le Runbook dédié selon le type d’asset :
+  - Code / Applications
+  - PaaS
+  - IaaS
+ - Exécution des actions techniques détaillées et automatisées.
+4. Analyse et Investigation
+  - Collecte des logs et preuves (CloudTrail, CloudWatch, S3, RDS, etc.).
+  - Analyse de la cause racine.
+  - Préservation des preuves pour conformité et audit.
+5. Escalade et Communication
+ - Escalade selon criticité.
+ - Communication interne et externe si nécessaire.
+6. Récupération et Remédiation
+ - Restauration des services affectés.
+ - Nettoyage, patching et validation post-incident.
+7. Clôture et Retour d’Expérience
+ - Documentation complète de l’incident.
+ - Analyse post-mortem et identification des améliorations.
+ - Mise à jour des Runbooks et standards si nécessaire.
+
+6️⃣  Références aux Runbooks
+| Type d’Asset        | Runbook / Procédure | Objectif                                                            |
+| ------------------- | ------------------- | ------------------------------------------------------------------- |
+| Code / Applications | RB-001              | Rollback, rotation secrets, journaux, analyse incidents applicatifs |
+| PaaS                | RB-002              | Reconfiguration, rotation clés, suspension d’accès compromis        |
+| IaaS                | RB-003              | Isolation VM/EC2/EKS, modification Security Groups, récupération    |
+
+7️⃣  Exigences de Qualification
+ - Le personnel exécutant les Runbooks doit être formé et compétent.
+ - Les exercices de simulation doivent être réalisés au moins une fois par an pour tester l’efficacité des Runbooks.
+
+8️⃣  Amélioration Continue
+ - Tous les incidents et exercices sont revus pour identifier les leçons apprises.
+ - Le Standard et les Runbooks sont mis à jour pour réduire les risques futurs et améliorer la rapidité de réponse.
