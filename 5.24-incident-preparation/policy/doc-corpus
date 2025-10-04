@@ -1,0 +1,28 @@
+                        ┌─────────────────────────────┐
+                        │      Policy (Politique)      │
+                        │  Cadre et responsabilités    │
+                        └─────────────┬───────────────┘
+                                      │
+                                      ▼
+                        ┌─────────────────────────────┐
+                        │ Standard de réponse aux      │
+                        │ incidents (ancien Playbook) │
+                        │  – référence les Runbooks   │
+                        └─────────────┬───────────────┘
+          ┌──────────────────────────────┼──────────────────────────────┐
+          ▼                              ▼                              ▼
+ ┌────────────────┐             ┌────────────────┐             ┌────────────────┐
+ │ Runbook Code   │             │ Runbook PaaS   │             │ Runbook IaaS   │
+ │ (Apps, secrets,│             │ (Services      │             │ (VMs, EC2, SG,│
+ │ CI/CD, logs)   │             │ managés)       │             │ Isolation)     │
+ └────────────────┘             └────────────────┘             └────────────────┘
+          │                              │                              │
+          ▼                              ▼                              ▼
+  ┌───────────────┐              ┌───────────────┐              ┌───────────────┐
+  │ Actions       │              │ Actions       │              │ Actions       │
+  │ techniques    │              │ techniques    │              │ techniques    │
+  │ automatisées  │              │ automatisées  │              │ automatisées  │
+  │ (SSM Docs,    │              │ (SSM Docs,    │              │ (SSM Docs,    │
+  │ scripts, CLI) │              │ scripts, CLI) │              │ scripts, CLI) │
+  └───────────────┘              └───────────────┘              └───────────────┘
+
