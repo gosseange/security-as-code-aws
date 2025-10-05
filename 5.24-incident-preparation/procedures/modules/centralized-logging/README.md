@@ -1,32 +1,38 @@
 # centralized_logging Terraform Module
 
-This module sets up centralized logging in a single AWS region for an organization. It includes:
+Ce module configure la journalisation centralisée dans une région AWS pour une organisation. Il inclut :
 
-- A secure S3 bucket for storing CloudTrail logs
-- A regional CloudTrail trail for management events only (no S3 data events)
-- DNS logs enabled via advanced event selector
-- GuardDuty enabled only in the security account, monitoring:
+- Un bucket S3 sécurisé pour stocker les logs CloudTrail
+- Un trail CloudTrail organisationnel régional (événements de gestion uniquement, sans data events S3)
+- DNS logs activés via `advanced_event_selector`
+- GuardDuty activé uniquement dans le compte sécurité, surveillant :
   - CloudTrail logs
   - VPC Flow Logs
   - DNS logs
-- Lifecycle policy to retain logs for 90 days
+- Une politique de cycle de vie pour conserver les logs pendant 90 jours
 
 ## Variables
 
-| Name         | Type   | Description                                  | Default      |
-|--------------|--------|----------------------------------------------|--------------|
-| region       | string | AWS region to deploy resources               | "us-east-1"  |
-| bucket_name  | string | Name of the S3 bucket for CloudTrail logs    | (required)   |
+| Nom                   | Type   | Description                                           | Défaut       |
+|-----------------------|--------|-------------------------------------------------------|--------------|
+| `region`              | string | Région AWS où déployer les ressources                 | `"us-east-1"`|
+| `security_bucket_name`| string | Nom du bucket S3 dans le compte sécurité              | *(obligatoire)* |
+| `security_account_id` | string | ID du compte AWS de sécurité                          | *(obligatoire)* |
 
 ## Outputs
 
-NameDescriptioncloudtrail_bucket_arnARN of the CloudTrail S3 bucketcloudtrail_trail_nameName of the CloudTrail trail| guardduty_detector_id  | ID of the GuardDuty detector                |
+| Nom                      | Description                                 |
+|--------------------------|---------------------------------------------|
+| `cloudtrail_bucket_arn`  | ARN du bucket S3 CloudTrail                 |
+| `cloudtrail_trail_name`  | Nom du trail CloudTrail                     |
+| `guardduty_detector_id`  | ID du détecteur GuardDuty                   |
 
-## Example Usage
+## Exemple d'utilisation
 
 
 module "centralized_logging" {
-  source      = "../../modules/centralized_logging"
-  region      = "ca-central-1"
-  bucket_name = "overnis-security-cloudtrail-logs"
+  source               = "../../modules/centralized_logging"
+  region               = "ca-central-1"
+  security_bucket_name = "overnis-security-cloudtrail-logs"
+  security_account_id  = "123456789012"
 }

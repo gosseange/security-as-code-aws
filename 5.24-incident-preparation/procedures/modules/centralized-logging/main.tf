@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "cloudtrail_bucket" {
-  bucket = var.bucket_name
+  bucket = var.security_bucket_name
   acl    = "private"
 
   versioning {
@@ -54,4 +54,3 @@ resource "aws_cloudtrail" "main" {
 resource "aws_guardduty_detector" "main" {
   enable = true
 }
-
