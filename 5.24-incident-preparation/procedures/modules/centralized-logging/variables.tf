@@ -18,8 +18,3 @@ variable "organization_account_ids" {
   description = "List of AWS Account IDs in the organization"
   type        = list(string)
 }
-
-variable "execution_date" {
-  description = "Execution date for tagging resources"
-  type        = string
-}
