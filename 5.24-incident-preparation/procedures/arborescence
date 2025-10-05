@@ -1,9 +1,11 @@
-modules/
-└── centralized_logging/
+detection-de-base/
+└── modules/
     ├── main.tf
     ├── variables.tf
     ├── outputs.tf
     └── README.md
 environments/
 └── prod/
+    └── main.tf
+└── dev/
     └── main.tf
