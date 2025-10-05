@@ -1,4 +1,4 @@
-detection-de-base/
+detection/
 └── modules/
     ├── main.tf
     ├── variables.tf

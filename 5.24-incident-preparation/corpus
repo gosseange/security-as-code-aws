@@ -24,5 +24,35 @@
   │ automatisées  │              │ automatisées  │              │ automatisées  │
   │ (SSM Docs,    │              │ (SSM Docs,    │              │ (SSM Docs,    │
   │ scripts, CLI) │              │ scripts, CLI) │              │ scripts, CLI) │
-  └───────────────┘              └───────────────┘              └───────────────┘
+  └──────┬────────┘              └──────┬────────┘              └──────┬────────┘
+         │                              │                               │
+         ▼                              ▼                               ▼
+┌────────────────────┐      ┌────────────────────┐       ┌────────────────────┐
+│ RB-CODE-001        │      │ RB-PAAS-001        │       │ RB-IAAS-001        │
+│ Rollback CI/CD     │      │ Rotation de clés   │       │ Isolation EC2      │
+├────────────────────┤      ├────────────────────┤       ├────────────────────┤
+│ RB-CODE-002        │      │ RB-PAAS-002        │       │ RB-IAAS-002        │
+│ Invalidation       │      │ Suspension accès   │       │ Modif. SG          │
+│ secrets exposés    │      │ compromis          │       ├────────────────────┤
+│                    │      │                    │       │ RB-IAAS-003        │
+│                    │      │                    │       │ Snapshot analyse   │
+└────────────────────┘      └────────────────────┘       └────────────────────┘
 
+Autres catégories transverses :
+───────────────────────────────────────────────────────────────────────────────
+- **RB-DET-001** : Détection CloudTrail / GuardDuty  
+- **RB-DET-002** : Notification ITSM  
+- **RB-LOG-001** : Journalisation des événements  
+- **RB-CLS-001** : Classification automatique via tags/CloudWatch  
+- **RB-ESC-001** : Escalade SOC/Direction  
+- **RB-ANL-001** : Analyse CloudTrail et CloudWatch  
+- **RB-ANL-002** : Export de logs S3/RDS  
+- **RB-COM-001** : Notification interne  
+- **RB-COM-002** : Communication clients/fournisseurs  
+- **RB-RCV-001** : Restauration IaaS  
+- **RB-RCV-002** : Restauration PaaS  
+- **RB-RCV-003** : Correction Code  
+- **RB-CLO-001** : Rapport post-mortem  
+- **RB-CLO-002** : Mise à jour Runbooks  
+- **RB-TST-001** : Table-top exercises  
+- **RB-TST-002** : Tests automatisés Runbooks  
