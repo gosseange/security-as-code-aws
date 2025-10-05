@@ -1,0 +1,9 @@
+modules/
+└── centralized_logging/
+    ├── main.tf
+    ├── variables.tf
+    ├── outputs.tf
+    └── README.md
+environments/
+└── prod/
+    └── main.tf
