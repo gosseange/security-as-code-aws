@@ -1,4 +1,4 @@
-# centralized_logging Terraform Module
+# Module Terraform detection-de-base
 
 Ce module configure la journalisation centralisée dans la région Paris (`eu-west-3`) pour une organisation AWS. Il permet de mettre en place les services de sécurité et de conformité dans un environnement multi-comptes.
 
