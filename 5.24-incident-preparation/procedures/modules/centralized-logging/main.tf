@@ -13,6 +13,10 @@ resource "aws_s3_bucket" "cloudtrail_bucket" {
       }
     }
   }
+
+  tags = {
+    ExecutionDate = var.execution_date
+  }
 }
 
 resource "aws_s3_bucket_lifecycle_configuration" "cloudtrail_lifecycle" {
@@ -49,8 +53,29 @@ resource "aws_cloudtrail" "main" {
       equals = ["Dns"]
     }
   }
+
+  tags = {
+    ExecutionDate = var.execution_date
+  }
 }
 
 resource "aws_guardduty_detector" "main" {
   enable = true
+
+  tags = {
+    ExecutionDate = var.execution_date
+  }
+}
+
+resource "aws_securityhub_account" "security_hub" {
+  depends_on = [aws_guardduty_detector.main]
+}
+
+resource "aws_securityhub_finding_aggregator" "aggregator" {
+  linking_mode = "ALL_REGIONS"
+}
+
+resource "aws_securityhub_standards_subscription" "cis_standard" {
+  depends_on   = [aws_securityhub_account.security_hub]
+  standards_arn = "arn:aws:securityhub:::standards/cis-aws-foundations-benchmark/v/1.2.0"
 }
